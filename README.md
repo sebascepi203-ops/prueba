@@ -1,62 +1,69 @@
-**UNIVERSIDAD NACIONAL DEL CENTRO DEL PERÚ**
+<h1 align="center">UNIVERSIDAD NACIONAL DEL CENTRO DEL PERÚ</h1>
 
-<img width="400" height="350" src="https://upload.wikimedia.org/wikipedia/commons/9/92/Escudo_UNCP.png" />
+<div align="center">   
+    <img width="400" height="350" src="https://upload.wikimedia.org/wikipedia/commons/9/92/Escudo_UNCP.png" />
+</div>
 
-**FACULTAD DE INGENIERÍA DE SISTEMAS**
+<h2 align="center">
+    <p>FACULTAD DE INGENIERÍA DE SISTEMAS</p>
+    <p>DESARROLLO DE APLICACIONES WEB</p>
+</h2>
 
-**DESARROLLO DE APLICACIONES WEB**
-
-**Conocimientos avanzados del lenguaje de diseño CSS**
+<h2 align="center">
+     Conocimientos avanzados del lenguaje de diseño CSS
+</h2>
 
 **PRESENTADO POR:**
 
-Cerrón Pizarro Sebastián José
+◼️Cerrón Pizarro Sebastián José
 
-Huaire Maravi Edison Orlando
+◼️Huaire Maravi Edison Orlando
 
-Huaman Huaynatez Jean Franco
+◼️Huaman Huaynatez Jean Franco
 
-Janampa Choccelahua Gian Alessandro
+◼️Janampa Choccelahua Gian Alessandro
 
-Mateo Cabello Raúl Julián
+◼️Mateo Cabello Raúl Julián
 
-Ramirez Buitrón Kenyo Wilder
+◼️Ramirez Buitrón Kenyo Wilder
 
-**HUANCAYO -- PERÚ**
+<h2 align="center">
+    <p>HUANCAYO -- PERÚ</p>
+    <p>2025</p>
+</h2>
 
-**2025**
+---
 
 # ÍNDICE
 
-#  {#section .TOC-Heading}
 
-[ÍNDICE [2](#índice)](#índice)
+[ÍNDICE]
 
-[INTRODUCCIÓN [3](#introducción)](#introducción)
+[INTRODUCCIÓN]
 
-[CAPITULO 1 [4](#capitulo-1)](#capitulo-1)
+[CAPITULO 1 - Variables CSS y Custom Properties]
 
-[CAPITULO 2 [5](#_Toc207475039)](#_Toc207475039)
+[CAPITULO 2]
 
-[CAPITULO 3 [6](#_Toc207475040)](#_Toc207475040)
+[CAPITULO 3]
 
-[CAPITULO 4 [7](#_Toc207475041)](#_Toc207475041)
+[CAPITULO 4]
 
-[CAPITULO 5 [8](#_Toc207475042)](#_Toc207475042)
+[CAPITULO 5]
 
-[CAPITULO 6 [9](#_Toc207475043)](#_Toc207475043)
+[CAPITULO 6]
 
-[CAPITULO 7 [10](#_Toc207475044)](#_Toc207475044)
+[CAPITULO 7]
 
-[CAPITULO 8 [11](#_Toc207475045)](#_Toc207475045)
+[CAPITULO 8]
 
-[CAPITULO 9 [12](#_Toc207475046)](#_Toc207475046)
+[CAPITULO 9]
 
-[CAPITULO 10 [13](#_Toc207475047)](#_Toc207475047)
+[CAPITULO 10]
 
-[CONCLUSIÓN [14](#_Toc207475048)](#_Toc207475048)
+[CONCLUSIÓN]
 
-[REFERENCIA BIBLIOGRÁFICA [15](#_Toc207475049)](#_Toc207475049)
+[REFERENCIA BIBLIOGRÁFICA]
 
 # INTRODUCCIÓN
 
@@ -93,9 +100,7 @@ descriptiva, ya que se buscará información revisando documentos,
 artículos, cursos y recursos web especializados. también es exploratoria
 ya que busca profundizar en temas avanzas relacionados con CSS.
 
-# CAPITULO 1
-
-Variables CSS y Custom Properties
+# CAPITULO 1 - Variables CSS y Custom Properties
 
 Ambos términos representan lo mismo, el Custom Properties es la forma
 oficial de decirle a las variables, el término fue dado por W3C, la cual
@@ -114,20 +119,14 @@ de la variable, se escoge la clase que tendra esta variable, luego de
 poner el nombre de la propiedad, se coloca "var()" y dentro del
 paréntesis se pone el nombre de la variable.
 
-+-----------------------------------------------------------------------+
-| :root {                                                               |
-|                                                                       |
-| \--background-color: yellow;                                          |
-|                                                                       |
-| }                                                                     |
-|                                                                       |
-| body {                                                                |
-|                                                                       |
-| background: var(\--background-color);                                 |
-|                                                                       |
-| }                                                                     |
-+=======================================================================+
-+-----------------------------------------------------------------------+
+```css
+:root {
+  --background-color: yellow;
+}
+body {
+  background: var(--background-color);
+}
+```
 
 Una característica que tiene la función var() es que se puede escoger
 una opción de respaldo si en el caso de la variable que ingresaste
@@ -135,84 +134,53 @@ dentro del paréntesis aun no ha sido definida. A esta alternativa se le
 conoce como Fallback, Si se desea que la opción de respaldo también sea
 una variable, se ingresa otra función var() y luego su variable.
 
-+-----------------------------------------------------------------------+
-| **Primer Código**                                                     |
-|                                                                       |
-| body {                                                                |
-|                                                                       |
-| background: var(\--background-color, green);                          |
-|                                                                       |
-| }                                                                     |
-+=======================================================================+
-+-----------------------------------------------------------------------+
+```css
+/* Primer Código*/
+body {
+  background: var(--background-color, green);
+}
+```
 
-+-----------------------------------------------------------------------+
-| **Segundo Código**                                                    |
-|                                                                       |
-| body{                                                                 |
-|                                                                       |
-| background-color: var( \--my-var, var(\--my-background, pink) );      |
-|                                                                       |
-| }                                                                     |
-+=======================================================================+
-+-----------------------------------------------------------------------+
+```css
+/* Segundo Código*/
+body{
+background-color: var( --my-var, var(--my-background, pink) );
+}
+```
 
 Se puede utilizar :root para hacer de manera global, pero también se
 puede hacer de manera local, utilizando una clase padre.
 
-+-----------------------------------------------------------------------+
-| **Código CSS**                                                        |
-|                                                                       |
-| .parent {                                                             |
-|                                                                       |
-|   \--background-color: black;                                         |
-|                                                                       |
-|   background: indigo;                                                 |
-|                                                                       |
-|   padding: 1rem;                                                      |
-|                                                                       |
-|   display: flex;                                                      |
-|                                                                       |
-|   gap: 1rem;                                                          |
-|                                                                       |
-| }                                                                     |
-|                                                                       |
-| .child {                                                              |
-|                                                                       |
-|   width: 100px;                                                       |
-|                                                                       |
-|   height: 100px;                                                      |
-|                                                                       |
-|   background: var(\--background-color);                               |
-|                                                                       |
-| }                                                                     |
-|                                                                       |
-| .first {                                                              |
-|                                                                       |
-|   \--background-color: gold;                                          |
-|                                                                       |
-| }                                                                     |
-+=======================================================================+
-+-----------------------------------------------------------------------+
+```css
+/* Código CSS*/
+.parent {
+  --background-color: black;
+  background: indigo;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+.child {
+  width: 100px;
+  height: 100px;
+  background: var(--background-color);
+}
+.first {
+  --background-color: gold;
+}
+```
 
 Como se muestra, en la clase parent se tiene una variable, para
 utilizarlas en las demás clases, estas tienen que estar dentro de la
 clase en el codigo HTML.
 
-+-----------------------------------------------------------------------+
-| **Código HTML**                                                       |
-|                                                                       |
-| \<div class=\"parent\"\>                                              |
-|                                                                       |
-| \<div class=\"first child\"\>First child\</div\>                      |
-|                                                                       |
-| \<div class=\"second child\"\>Second child\</div\>                    |
-|                                                                       |
-| \<div class=\"third child\"\>Third child\</div\>                      |
-|                                                                       |
-| \</div\>                                                              |
-+=======================================================================+
-+-----------------------------------------------------------------------+
+```css
+<div class="parent">
+  <div class="first child">First child</div>
+  <div class="second child">Second child</div>
+  <div class="third child">Third child</div>
+</div>
+```
 
 Como se muestra en el código, al estar dentro de la clase "parent",
 puede utilizar la variable que tiene su clase padre. En el caso de la
@@ -231,3 +199,10 @@ clase "firts" se priorizará su variable, cambiando de blanco a negro.
 
 -   Compatibilidad con JavaScript: se pueden modificar en tiempo real,
     favoreciendo la construcción de interfaces interactivas.
+    
+# REFERENCIA BIBLIOGRÁFICA
+
+- Manz. (s. f.). ¿Qué es CSS? En LenguajeCSS.com. https://lenguajecss.com/css/introduccion/que-es-css/
+- ManzDev. (2017, 5 de abril). Variables CSS: CSS Custom Properties. https://lenguajecss.com/css/variables-css/css-custom-properties/
+- World Wide Web Consortium (s. f.). About us. W3C. https://www.w3.org/about/
+
