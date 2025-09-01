@@ -1,6 +1,6 @@
 **UNIVERSIDAD NACIONAL DEL CENTRO DEL PERÚ**
 
-<img  src="https://upload.wikimedia.org/wikipedia/commons/9/92/Escudo_UNCP.png" />
+<img width="400" height="350" src="https://upload.wikimedia.org/wikipedia/commons/9/92/Escudo_UNCP.png" />
 
 **FACULTAD DE INGENIERÍA DE SISTEMAS**
 
