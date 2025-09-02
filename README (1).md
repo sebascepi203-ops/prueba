@@ -55,9 +55,9 @@
 
 [CAPITULO 7 - Clipping y Masking con CSS]
 
-[CAPITULO 8]
+[CAPITULO 8 - Container Queries]
 
-[CAPITULO 9]
+[CAPITULO 9 - Filtros y Efectos Visuales avanzados]
 
 [CAPITULO 10 - Técnicas de Performance y Optmización en CSS]
 
@@ -881,3 +881,4 @@ En conclusión, la optimización de CSS no representa una acción opcional, sino
 - W3C. (2019). *CSS Scroll Snap Module Level 1*. World Wide Web Consortium. Recuperado de https://www.w3.org/TR/css-scroll-snap-1/
 - Manz. (s. f.).  Filtros CSS En LenguajeCSS.com.https://lenguajecss.com/css/efectos/filtros-css/
 - Manz. (s. f.). CSS Container Queries En LenguajeCSS.com.https://lenguajecss.com/css/responsive-web-design/css-container-queries/
+
