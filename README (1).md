@@ -59,8 +59,6 @@
 
 [CAPITULO 9 - Filtros y Efectos Visuales avanzados]
 
-[CAPITULO 10 - Técnicas de Performance y Optmización en CSS]
-
 [CONCLUSIÓN]
 
 [REFERENCIA BIBLIOGRÁFICA]
@@ -775,85 +773,7 @@ Es decir, mientras que filter afecta directamente al elemento y a todo lo que co
 #img11 {
     backdrop-filter: blur(10px);
 }
-```
 
-# CAPITULO 10 - Técnicas de Performance y Optimización en CSS
-
-## Concepto
-Según Vázquez Sanisidro (2017), el **CSS es un recurso crítico de bloqueo de renderizado**, es decir, mientras el navegador no procese las hojas de estilo, la página no puede mostrarse al usuario. Por ello, la optimización de CSS busca **reducir el tiempo de renderizado inicial** aplicando técnicas como:
-
-- Uso de **CSS crítico (Critical CSS)** para cargar primero los estilos mínimos necesarios en la parte visible.  
-- **Minificación** de archivos para reducir su tamaño eliminando espacios y comentarios.  
-- **Carga diferida o asíncrona** del CSS no crítico para evitar bloquear la renderización.  
-- Evitar el uso de **estilos inline**, ya que son más lentos de procesar y no se pueden cachear.  
-- Optimización de **fuentes web** con `@font-face` y la propiedad `font-display` para evitar pantallas en blanco mientras se descargan.  
-
-En palabras del autor:  
-> “Lo ideal es identificar los estilos críticos para el diseño de la parte superior de la página y cargarlos junto al html (…) y retrasar la carga del resto de los recursos CSS después del html necesario para mostrar la parte superior de la página” [1].
-
-## Ventajas
-- Mejora perceptible en el tiempo de carga inicial de la página.  
-- Evita que el usuario vea una página en blanco mientras se cargan los estilos.  
-- Reduce el tamaño de los archivos CSS y acelera su descarga.  
-- Permite aprovechar nuevas capacidades de los navegadores modernos (como `preload` y `font-display`).  
-- Incrementa la retención de usuarios y el posicionamiento en buscadores (SEO).  
-
-## Ejemplo de Código
-| Código No optimizado |
-```html
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Ejemplo sin optimización</title>
-
-  <!-- ❌ Múltiples hojas de estilo que bloquean el renderizado -->
-  <link rel="stylesheet" href="reset.css">
-  <link rel="stylesheet" href="layout.css">
-  <link rel="stylesheet" href="theme.css">
-  <link rel="stylesheet" href="fonts.css">
-
-  <!-- ❌ Fuente sin font-display (puede mostrar pantalla en blanco mientras carga) -->
-  <style>
-    @font-face {
-      font-family: 'MiFuente';
-      src: url('mifuente.woff2') format('woff2');
-    }
-  </style>
-
-  <!-- ❌ Estilos inline dispersos -->
-</head>
-<body style="margin:0; padding:0; background:#f4f4f4;">
-  <h1 style="color:#333; text-align:center; margin-top:50px;">
-    Bienvenido a mi sitio sin optimización
-  </h1>
-  <p style="font-size:18px; color:#555; text-align:center;">
-    Este texto tarda más en cargarse debido a malas prácticas en el uso de CSS.
-  </p>
-</body>
-</html>
-```
-| Código Optimizado |
-```html
-<style>
-  /* ✅ CSS crítico inline (se carga primero) */
-  body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f4f4; }
-  h1 { font-size: 2em; color: darkblue; text-align: center; margin-top: 50px; }
-</style>
-
-<!-- ✅ Carga diferida de CSS no crítico -->
-<link rel="preload" href="styles.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="styles.min.css"></noscript>
-
-<!-- ✅ Fuente optimizada con font-display -->
-<style>
-  @font-face {
-    font-family: 'MiFuente';
-    src: url('mifuente.woff2') format('woff2'),
-         url('mifuente.woff') format('woff');
-    font-display: swap; /* Muestra texto con fuente del sistema mientras carga */
-  }
-</style>
 ```
 
 # CONCLUSIÓN
